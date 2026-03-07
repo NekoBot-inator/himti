@@ -2,25 +2,344 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
 
-body {
-    background-color: #B2EBF2;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #1A5276;
-    padding: 80px 100px;
+html {
+    scroll-behavior: smooth;
 }
 
-.header {
-    max-width: 1200px;
-    margin: 0 auto;
+.container {
+    width: 85%;
+    max-width: 1100px;
+    margin: auto;
 }
 
-h1 {
-    font-size: 80px;
-    margin-bottom: 80px;
-    color: #4A90E2;
+header {
+    padding: 15px 0;
+    position: sticky;   
+    top: 0;             
+    z-index: 1000;      
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 25px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: black;
+    font-weight: 500;
+    padding: 8px 12px;     
+    border-radius: 6px;    
+    display: inline-block;  
+    transition: 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: #4DA9E5;
+    color: white;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    display: block;
+}
+
+.logo:hover{
+    cursor: pointer;
+}
+
+.home {
+    position: relative;
+    height: 100vh;
+    padding-bottom: 350px;
+    color: black;
+    overflow: hidden;
+}
+
+.home-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100%;
+}
+
+.home-text {
+    max-width: 700px;
+}
+
+.home-text h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.home-text p {
+    margin-bottom: 25px;
+    font-size: 18px;
+}
+
+.home-buildings {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover; 
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    background: #4DA9E5;
+    color: white;
+    border-radius: 30px;
+    text-decoration: none;
     font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: white;
+    color: #4DA9E5;
+}
+
+.events {
+    background: #B3EEF5;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.events h2 {
+    margin-bottom: 50px;
+    color: #1e3a8a;
+}
+
+.event-box {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    background: white;
+    margin: 20px auto;
+    padding: 30px;
+    border-radius: 10px;
+    max-width: 900px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    text-align: left;
+}
+
+.event-box.reverse {
+    flex-direction: row-reverse;
+}
+
+.event-image img {
+    width: 200px;
+}
+
+.contact {
+    background: #3B82F6; /* Warna biru sesuai desain */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+.btn-send {
+    padding: 12px 50px; 
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px; /* Sudut dibuat sedikit membulat seperti Figma */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background: #e0e0e0;
+}
+
+footer {
+    background: #2749AD;
+    color: white;
+    padding: 50px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Jarak antara logo BINUS dan HIMTI */
+}
+
+.footer-logo img {
+    height: 80px; 
+    width: auto;
+}
+
+.footer-himti img {
+    height: 120px; /* Diperbesar agar seimbang dengan logo BINUS */
+    width: auto;
+}
+
+.footer-socials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-socials li {
+    margin-bottom: 15px;
+}
+
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.footer-socials img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; /* Pastikan icon tidak gepeng */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+
+    .nav {
+        flex-direction: row;          
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .nav ul {
+        flex-direction: row;          
+        gap: 10px;
+    }
+
+    .nav a {
+        font-size: 14px;             
+        padding: 6px 8px;
+    }
+
+    .logo img {
+        height: 40px;
+    }
+
+    .container {
+        width: 92%;
+    }
+
+    .home {
+        height: auto;          
+        padding: 80px 0 0 0;  
+        text-align: center;
+    }
+
+    .home-content {
+        height: auto;
+        padding-bottom: 20px;
+    }
+
+    .home-text h1 {
+        font-size: 26px;
+    }
+
+    .home-text p {
+        font-size: 14px;
+        padding: 0 10px;
+    }
+
+    .home-buildings {
+        position: relative;   
+        max-height: 200px;
+        margin-top: 20px;
+    }
+
+    .event-box {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .event-image img {
+        width: 100%;
+        max-width: 250px;
+        margin-bottom: 15px;
+    }
+    
+    .contact {
+        padding: 50px 0;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-socials li {
+        justify-content: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        gap: 20px;
+    }
 }
 
 .Row {
@@ -63,4 +382,8 @@ h1 {
     width: 100%;
     max-width: 450px;
     height: auto;
+}
+
+.event-body {
+    padding: 80px 100px;
 }
