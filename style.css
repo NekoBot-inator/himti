@@ -3,11 +3,15 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+}
+
+html {
     scroll-behavior: smooth;
 }
 
 .container {
     width: 85%;
+    max-width: 1100px;
     margin: auto;
 }
 
@@ -143,11 +147,111 @@ header {
     width: 200px;
 }
 
+.contact {
+    background: #3B82F6; /* Warna biru sesuai desain */
+    padding: 80px 0;
+    text-align: center;
+}
+
+.contact h2 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.contact-form {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    resize: vertical;
+}
+
+.btn-send {
+    padding: 12px 50px; 
+    background: white;
+    color: black;
+    border: none;
+    border-radius: 8px; /* Sudut dibuat sedikit membulat seperti Figma */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    align-self: center;
+    transition: 0.3s;
+}
+
+.btn-send:hover {
+    background: #e0e0e0;
+}
+
 footer {
     background: #2749AD;
     color: white;
+    padding: 50px 0 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: center;
+    gap: 40px; /* Jarak antara logo BINUS dan HIMTI */
+}
+
+.footer-logo img {
+    height: 80px; 
+    width: auto;
+}
+
+.footer-himti img {
+    height: 120px; /* Diperbesar agar seimbang dengan logo BINUS */
+    width: auto;
+}
+
+.footer-socials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-socials li {
+    margin-bottom: 15px;
+}
+
+.footer-socials a {
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 16px;
+}
+
+.footer-socials img {
+    width: 24px;
+    height: 24px;
+    object-fit: contain; /* Pastikan icon tidak gepeng */
+}
+
+.footer-bottom {
     text-align: center;
-    padding: 20px 0;
+    font-size: 14px;
 }
 
 @media (max-width: 768px) {
@@ -212,5 +316,28 @@ footer {
         width: 100%;
         max-width: 250px;
         margin-bottom: 15px;
+    }
+    
+    .contact {
+        padding: 50px 0;
+    }
+
+    .contact h2 {
+        font-size: 28px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+    }
+
+    .footer-socials li {
+        justify-content: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        gap: 20px;
     }
 }
